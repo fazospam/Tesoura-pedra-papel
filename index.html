@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<script>
+    var resultado =Math.round(Math.random() * 2);
+
+        function historico(){
+            if(resultado==0){$("#lista").append("<li>" + '<img src="images/tesoura.png">' + "</li>");}
+            if(resultado==1){$("#lista").append("<li>" + '<img src="images/papel.png">' + "</li>");}
+            if(resultado==2){$("#lista").append("<li>" + '<img src="images/pedra.png">' + "</li>");}
+            
+        }
+        function scissor(){ 
+            if(resultado==0){window.alert("draw");}
+            if(resultado==1){window.alert("win");}
+            if(resultado==2){window.alert("lose");}
+            historico();
+            resultado =Math.round(Math.random() * 2);
+            
+        } 
+        function paper(){ 
+            if(resultado==1){window.alert("draw");}
+            if(resultado==2){window.alert("win");}
+            if(resultado==0){window.alert("lose");}
+            historico();
+            resultado =Math.round(Math.random() * 2);
+            
+        } 
+        function rock(){ 
+            if(resultado==2){window.alert("draw");}
+            if(resultado==0){window.alert("win");}
+            if(resultado==1){window.alert("lose");}
+            historico();
+            resultado =Math.round(Math.random() * 2);
+            
+        } 
+       
+        
+</script>
+<body>
+    <h1>
+        tesoura papel pedra
+    </h1>
+    <ul>
+        <button onclick="scissor()">
+            <img src="images/tesoura.png"> 
+          </button>
+          <button onclick="paper()">
+              <img src="images/papel.png"> 
+            </button>
+            <button onclick="rock()"> 
+              <img src="images/pedra.png"> 
+            </button>
+            <h1>
+
+                Histórico do oponente
+            </h1>
+    </ul>
+
+    <ul id="lista">
+
+
+    </ul>
+    
+</body>
+</html>
